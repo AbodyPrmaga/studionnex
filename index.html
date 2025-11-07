@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudioNex</title>
+  <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f7fc;
+      color: #333;
+    }
+
+    header {
+      position: relative;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+      overflow: hidden;
+    }
+
+    header .header-bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: opacity 1s ease-in-out;
+      opacity: 1;
+      z-index: 0;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* شفافية ثابتة فوق الصورة */
+      z-index: 1;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    .services {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #222;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .service {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+    }
+
+    .service img {
+      width: 100%;
+      border-radius: 12px;
+      height: 180px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .service h3 {
+      margin: 10px 0 0;
+      color: #222;
+    }
+
+    .reviews {
+      background: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .reviews h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #222;
+    }
+
+    .review-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .review {
+      background: #f3f1f9;
+      border-radius: 16px;
+      padding: 20px;
+      max-width: 300px;
+      text-align: left;
+    }
+
+    .review img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      background: linear-gradient(135deg, #7b2ff7, #f107a3);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .contact a {
+      display: inline-block;
+      background: #fff;
+      color: #7b2ff7;
+      margin: 10px;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .contact a:hover {
+      background: #f1e4ff;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header id="dynamic-header">
+    <div class="header-bg"></div>
+    <h1>Welcome to <span style="color:#000000;"><mark>StudioNex</mark></span></h1>
+    <p>We bring your creative ideas to life through technology, design, and innovation.</p>
+  </header>
+
+  <section class="services">
+    <h2>Our Creative Services</h2>
+    <div class="service-list">
+      <div class="service">
+        <img src="https://images.unsplash.com/photo-1609619385002-f40f1df9b7eb?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=870" alt="Video Editing">
+        <h3>Video Editing</h3>
+      </div>
+      <div class="service">
+        <img src="https://plus.unsplash.com/premium_photo-1682147208772-c4ae4db3ab7e?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=870" alt="Audio Editing">
+        <h3>Audio Editing</h3>
+      </div>
+      <div class="service">
+        <img src="https://images.unsplash.com/photo-1620674156044-52b714665d46?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1032" alt="Photo Editing">
+        <h3>Photo Editing</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <h2>What Our Clients Say</h2>
+    <div class="review-list">
+      <div class="review">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client 1">
+        <p>"StudioNex helped us grow our brand online and the results were beyond expectations!"</p>
+        <strong>- Ahmed Khaled</strong>
+      </div>
+      <div class="review">
+        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Client 2">
+        <p>"Professional team, quick delivery, and outstanding creativity! Highly recommended."</p>
+        <strong>- Omar Hussein</strong>
+      </div>
+      <div class="review">
+        <img src="https://randomuser.me/api/portraits/men/34.jpg" alt="Client 3">
+        <p>"They turned our concept into a full digital experience — excellent collaboration!"</p>
+        <strong>- Youssef Ali</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>Let’s bring your next big idea to life!</p>
+    <a href="https://wa.me/201095766053" target="_blank">💬 WhatsApp</a>
+    <a href="#" target="_blank">📘 Facebook</a>
+  </section>
+
+  <footer>
+    <p>© 2025 StudioNex. All rights reserved.</p>
+  </footer>
+
+<script>
+  const bg = document.querySelector('.header-bg');
+  const images = [
+    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=870",
+    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=870",
+    "https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&q=80&w=870",
+    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=870"
+  ];
+
+  let index = 0;
+  bg.style.backgroundImage = `url(${images[index]})`;
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    const newBg = document.createElement('div');
+    newBg.className = 'header-bg';
+    newBg.style.backgroundImage = `url(${images[index]})`;
+    newBg.style.opacity = 0;
+    document.getElementById('dynamic-header').prepend(newBg);
+
+    requestAnimationFrame(() => newBg.style.opacity = 1);
+
+    setTimeout(() => {
+      const old = document.querySelectorAll('.header-bg');
+      if (old.length > 1) old[1].remove();
+    }, 1000);
+  }, 5000);
+</script>
+
+</body>
+</html>
