@@ -171,6 +171,97 @@
       padding: 20px;
       font-size: 0.9rem;
     }
+
+    .services {
+      text-align: center;
+      padding: 50px 0;
+      background: #f9f9f9;
+    }
+
+  .service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+  .service {
+    background: #fff;
+    border-radius: 16px;
+    width: 300px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    position: relative;
+  }
+  .service:hover {
+    transform: translateY(-5px);
+  }
+  .service img {
+    width: 100%;
+    border-radius: 12px;
+    height: 180px;
+    object-fit: cover;
+  }
+  .service h3 {
+    margin-top: 12px;
+    font-size: 20px;
+  }
+  .buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+  .info-btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .info-btn:hover {
+    background: #0056b3;
+  }
+  .info-btn,
+  .whatsapp-btn {
+    background: linear-gradient(135deg, #7b2ff7, #f107a3);
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .info-btn:hover,
+  .whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(241, 7, 163, 0.3);
+  }
+
+  .description {
+    display: none;
+    margin-top: 12px;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .description.show {
+    display: block;
+    animation: fadeIn 0.4s ease;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
   </style>
 </head>
 <body>
@@ -181,23 +272,54 @@
     <p>We bring your creative ideas to life through technology, design, and innovation.</p>
   </header>
 
-  <section class="services">
-    <h2>Our Creative Services</h2>
-    <div class="service-list">
-      <div class="service">
-        <img src="https://images.unsplash.com/photo-1609619385002-f40f1df9b7eb?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=870" alt="Video Editing">
-        <h3>Video Editing</h3>
+<section class="services">
+  <h2>Our Creative Services</h2>
+  <div class="service-list">
+    
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1609619385002-f40f1df9b7eb?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=870" alt="Video Editing">
+      <h3>Video Editing</h3>
+      <div class="buttons">
+        <button class="info-btn" onclick="toggleDescription(this)">More Info</button>
+        <a href="https://wa.me/201095766053" target="_blank" class="whatsapp-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
       </div>
-      <div class="service">
-        <img src="https://plus.unsplash.com/premium_photo-1682147208772-c4ae4db3ab7e?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=870" alt="Audio Editing">
-        <h3>Audio Editing</h3>
-      </div>
-      <div class="service">
-        <img src="https://images.unsplash.com/photo-1620674156044-52b714665d46?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1032" alt="Photo Editing">
-        <h3>Photo Editing</h3>
-      </div>
+      <p class="description">
+        We provide professional video editing services including color grading, motion graphics, and cinematic cuts tailored for your brand or content.
+      </p>
     </div>
-  </section>
+
+    <div class="service">
+      <img src="https://plus.unsplash.com/premium_photo-1682147208772-c4ae4db3ab7e?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=870" alt="Audio Editing">
+      <h3>Audio Editing</h3>
+      <div class="buttons">
+        <button class="info-btn" onclick="toggleDescription(this)">More Info</button>
+        <a href="https://wa.me/201095766053" target="_blank" class="whatsapp-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+      <p class="description">
+        Enhance your sound with our expert audio editing — noise reduction, mastering, and perfect balance for podcasts or videos.
+      </p>
+    </div>
+
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1620674156044-52b714665d46?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1032" alt="Photo Editing">
+      <h3>Photo Editing</h3>
+      <div class="buttons">
+        <button class="info-btn" onclick="toggleDescription(this)">More Info</button>
+        <a href="https://wa.me/201095766053" target="_blank" class="whatsapp-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+      <p class="description">
+        Professional photo editing and retouching to make your visuals stand out — from portraits to product photography.
+      </p>
+    </div>
+
+  </div>
+</section>
 
   <section class="reviews">
     <h2>What Our Clients Say</h2>
@@ -266,6 +388,15 @@
       if (old.length > 1) old[1].remove();
     }, 1000);
   }, 5000);
+
+
+  function toggleDescription(button) {
+    const card = button.closest('.service');
+    const desc = card.querySelector('.description');
+    desc.classList.toggle('show');
+    button.textContent = desc.classList.contains('show') ? 'Hide Info' : 'More Info';
+  }
+
 </script>
 
 </body>
